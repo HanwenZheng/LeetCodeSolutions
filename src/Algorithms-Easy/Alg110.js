@@ -3,6 +3,7 @@ function TreeNode(val, left, right) {
   this.left = left === undefined ? null : left;
   this.right = right === undefined ? null : right;
 }
+let nt = (left, right) => new TreeNode(1, left, right);
 
 /**
  * @param {TreeNode} root
@@ -22,6 +23,5 @@ let calHeight = (node) => {
   return Math.max(node.left ? calHeight(node.left) + 1 : 0, node.right ? calHeight(node.right) + 1 : 0);
 };
 
-let nt = (left, right) => new TreeNode(1, left, right);
 let test = nt(nt(nt(nt(), null), null), nt(null, nt(null, nt())));
 console.log(isBalanced(test));
